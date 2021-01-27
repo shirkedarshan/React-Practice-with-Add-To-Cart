@@ -1,11 +1,11 @@
 import React from "react"
-import NewJSFeatures from "./NewJSFeatures"
+import Child from "./Child"
 
 function App() {
     return (
-        <div>
-            <NewJSFeatures />
-        </div>
+        <React.Fragment>
+            <Child />
+        </React.Fragment>
     )
 }
 
