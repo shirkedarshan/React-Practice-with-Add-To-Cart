@@ -1,11 +1,13 @@
 import React from "react"
-import Child from "./Child"
+import Card from "./Card"
 
 function App() {
     return (
-        <React.Fragment>
-            <Child />
-        </React.Fragment>
+        <div>
+            <Card cardColor="red" height={100} width={200} />
+            <Card />
+            <Card cardColor="green" height={200} width={100}/>
+        </div>
     )
 }
 
