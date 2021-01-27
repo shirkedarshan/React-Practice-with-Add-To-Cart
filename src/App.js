@@ -1,10 +1,21 @@
 import React from "react"
-import RoundedImg from "./RoundedImg"
+import CTA from "./CTA"
 
-function App() {    
+function App() {
     return (
         <div>
-            <RoundedImg src="https://picsum.photos/id/237/300/300" />
+            <CTA position="right">
+                <h1>This is an important CTA</h1>
+                <button>Click me now or you'll miss out!</button>
+            </CTA>
+            
+            <CTA>
+                <form>
+                    <input type="email" placeholder="Enter email address here"/>
+                    <br />
+                    <button>Submit</button>
+                </form>
+            </CTA>
         </div>
     )
 }
