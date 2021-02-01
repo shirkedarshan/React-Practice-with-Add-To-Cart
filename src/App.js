@@ -1,14 +1,15 @@
-import React, { Component } from "react"
-import {withPointlessHOC} from "./withPointlessHOC"
-import {withExtraPropAdded} from "./withExtraPropAdded"
+import React from "react"
+import Menu from "./Menu"
+import Favorite from "./Favorite"
 
-function App(props) {
-    console.log(props) //   Check console log
+function App() {
     return (
-        <div>Hello world! <h2>{props.anotherProp}</h2></div>
-        
+        <div>
+            <Menu />
+            <hr />
+            <Favorite />
+        </div>
     )
 }
 
-const ExtraPropComponent = withExtraPropAdded(App)
-export default ExtraPropComponent
+export default App
