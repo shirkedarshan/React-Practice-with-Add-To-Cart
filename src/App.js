@@ -1,18 +1,16 @@
 import React from "react"
-import Menu from "./Menu"
-import Favorite from "./Favorite"
-import Toggler from "./Toggler"
+import DataFetcher from "./DataFetcher"
 
-function App() {
+function App() {    
     return (
         <div>
-            <Toggler defaultOnValue={true} render={({on, toggle}) => {
-                return (
-                    <Menu on={on} toggle={toggle}/>
-                )
-            }}/>
-            <hr />
-            <Favorite />
+            <DataFetcher url="https://swapi.dev/api/people/1">
+                {({data, loading}) => (
+                    loading ? 
+                    <h1>Loading...</h1> :
+                    <p>{JSON.stringify(data)}</p>
+                )}
+            </DataFetcher>
         </div>
     )
 }
