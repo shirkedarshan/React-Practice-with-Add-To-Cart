@@ -1,54 +1,23 @@
-import React from "react"
+import React, {Component} from "react"
+import GrandParent from "./GrandParent"
 
-function App() {    
-    // ===
-// Primitive types (strings, numbers, booleans)
-// console.log("Hi" === "Hi")
-
-// Complex types (array, object)
-// console.log({name: "Joe"} === {name: "Joe"})
-
-const arr1 = [1, 2, 3, [4]]
-const arr2 = [1, 2, 3, [4]]
-
-const state = {
-    favNumber: 42,
-    name: "Bob",
-    address: {
-        street: "123 Main Street",
-        city: "Nowhere, PA",
-        zip: 12345
+class App extends Component {
+    state = { count: 0 }
+    
+    increment = () => this.setState(prevState => ({count: prevState.count + 1}))
+    
+    render() {
+        console.log("[GP] [P] [C] [GC] APP just rendered")
+        return (
+            <div>
+                <button onClick={this.increment}>+1</button>
+                <h2>{this.state.count}</h2>
+                <p>I'm the App component</p>
+                <GrandParent />
+                <GrandParent />
+            </div>
+        )    
     }
-}
-
-const state2 = {
-    favNumber: 42,
-    name: "Bob",
-    address: {
-        street: "123 Main Street",
-        city: "Nowhere, PA",
-        zip: 12345
-    }
-}
-
-// console.log(state.favNumber === state2.favNumber)
-// console.log(state.name === state2.name)
-// console.log(state.address === state2.address)
-
-const person = {
-    name: "Sarah"
-}
-
-const anotherPerson = {
-    name: "Sarah"
-}
-
-console.log(anotherPerson === person)
-    return (
-        <div>
-            <h2>Shallow Comparison Check Console</h2>
-        </div>
-    )
 }
 
 export default App
