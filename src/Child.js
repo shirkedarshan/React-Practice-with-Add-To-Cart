@@ -1,7 +1,7 @@
-import React, {Component} from "react"
+import React, {PureComponent} from "react"
 import GrandChild from "./GrandChild"
 
-class Child extends Component {
+class Child extends PureComponent {
     render() {
         console.log("[ ]   [ ]   [🧒🏻]   [ ] rendered")
         return (
