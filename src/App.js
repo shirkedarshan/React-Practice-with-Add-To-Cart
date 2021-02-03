@@ -1,18 +1,25 @@
 import React, {useState} from "react"
 
-function App() {
-    const [answer] = useState("Yes")
+// Convert the class below to a functional component that uses the useState hook to initalize a count vartiable to 0 and display the count on the screen.
+// Don't worry about the part where the button changes the count quite yet, that's what you're here to learn about!
 
-    const person = {
-        name: "Joe",
-        age: 42
+function App() {
+    const [count, setCount] = useState(0)
+    const [answer, setAnswer] = useState("Yes")
+    
+    function increment() {
+        setCount(prevCount => prevCount + 1)
     }
     
-    const { name, age } = person // array destructuring
-
+    function decrement() {
+        setCount(prevCount => prevCount - 1)
+    }
+    
     return (
         <div>
-            <h1>Is state important to know? {answer}</h1>
+            <h1>{count}</h1>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
         </div>
     )
 }
@@ -21,6 +28,7 @@ function App() {
 //     constructor() {
 //         super()
 //         this.state = {
+//             count: 0,
 //             answer: "Yes"
 //         }
 //     }
@@ -28,7 +36,8 @@ function App() {
 //     render() {
 //         return (
 //             <div>
-//                 <h1>Is state important to know? {this.state.answer}</h1>
+//                 <h1>{this.state.count}</h1>
+//                 <button>Change!</button>
 //             </div>
 //         )
 //     }
