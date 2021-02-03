@@ -1,24 +1,37 @@
-import React from "react"
+import React, {useState} from "react"
 
-function App (){
-        return (
-            <div>
-                <h2>Welcome to Hooks</h2>
-                <hr/>
-                <p>useState</p>
-                <p>useEffect</p>
-                <p>useContext</p>
-                <p>useRef</p>
-                <p>useReducer</p>
-                <hr/>
-                <p>useMemo</p>
-                <p>useCallback</p>
-                <p>useImperativeHandle</p>
-                <p>useLayoutEffect</p>
-                <p>useDebugValue</p>
-                <hr/>
-            </div>
-        )    
+function App() {
+    const [answer] = useState("Yes")
+
+    const person = {
+        name: "Joe",
+        age: 42
+    }
+    
+    const { name, age } = person // array destructuring
+
+    return (
+        <div>
+            <h1>Is state important to know? {answer}</h1>
+        </div>
+    )
 }
+
+// class App extends React.Component {
+//     constructor() {
+//         super()
+//         this.state = {
+//             answer: "Yes"
+//         }
+//     }
+    
+//     render() {
+//         return (
+//             <div>
+//                 <h1>Is state important to know? {this.state.answer}</h1>
+//             </div>
+//         )
+//     }
+// }
 
 export default App
