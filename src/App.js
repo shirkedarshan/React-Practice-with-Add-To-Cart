@@ -1,23 +1,24 @@
-import React, {Component} from "react"
-import GrandParent from "./GrandParent"
+import React from "react"
 
-class App extends Component {
-    state = { count: 0 }
-    
-    increment = () => this.setState(prevState => ({count: prevState.count + 1}))
-    
-    render() {
-        console.log("[GP] [P] [C] [GC] APP just rendered")
+function App (){
         return (
             <div>
-                <button onClick={this.increment}>+1</button>
-                <h2>{this.state.count}</h2>
-                <p>I'm the App component</p>
-                <GrandParent count={this.state.count} />
-                <GrandParent />
+                <h2>Welcome to Hooks</h2>
+                <hr/>
+                <p>useState</p>
+                <p>useEffect</p>
+                <p>useContext</p>
+                <p>useRef</p>
+                <p>useReducer</p>
+                <hr/>
+                <p>useMemo</p>
+                <p>useCallback</p>
+                <p>useImperativeHandle</p>
+                <p>useLayoutEffect</p>
+                <p>useDebugValue</p>
+                <hr/>
             </div>
         )    
-    }
 }
 
 export default App
