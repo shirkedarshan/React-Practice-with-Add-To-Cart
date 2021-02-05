@@ -1,24 +1,14 @@
-import React, {useState, useEffect} from "react"
-import randomcolor from "randomcolor"
+import React from "react"
+import "./App.css"
 
 function App() {
-    const [count, setCount] = useState(0)
-    const [color, setColor] = useState("")
-    
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCount(prevCount => prevCount + 1)
-        }, 1000)
-        return () => clearInterval(intervalId)
-    }, [])
-    
-    useEffect(() => {
-        setColor(randomcolor())
-    }, [count])
-    
     return (
         <div>
-            <h1 style={{color: color}}>{count}</h1>
+            <h1>How fast do you type?</h1>
+            <textarea />
+            <h4>Time reminaing: ???</h4>
+            <button>Start</button>
+            <h1>Word count: ???</h1>
         </div>
     )
 }
