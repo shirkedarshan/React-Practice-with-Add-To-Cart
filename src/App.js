@@ -1,43 +1,28 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
+import randomcolor from "randomcolor"
 
 function App() {
-    const [inputData, setInputData] = useState({firstName: "", lastName: ""})
-    const [contactsData, setContactsData] = useState([])
+    const [count, setCount] = useState(0)
+    const [color, setColor] = useState("")
     
-    function handleChange(event) {
-        const {name, value} = event.target
-        setInputData(prevInputData => ({...prevInputData, [name]: value}))
+    function increment() {
+        setCount(prevCount => prevCount + 1)
     }
     
-    function handleSubmit(event) {
-        event.preventDefault()
-        setContactsData(prevContacts => [...prevContacts, inputData])
-        console.log( inputData )
-    
+    function decrement() {
+        setCount(prevCount => prevCount - 1)
     }
     
-    const contacts = contactsData.map(contact => <h2 key={contact.firstName + contact.lastName}>{contact.firstName} {contact.lastName}</h2>)
+    useEffect(() => {
+        setColor(randomcolor())
+    }, [count])
     
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    placeholder="First Name"
-                    name="firstName" 
-                    value={inputData.firstName}
-                    onChange={handleChange}
-                />
-                <input 
-                    placeholder="Last Name"
-                    name="lastName" 
-                    value={inputData.lastName}
-                    onChange={handleChange}
-                />
-                <br />
-                <button>Add contact</button>
-            </form>
-            {contacts}
-        </>
+        <div>
+            <h1 style={{color: color}}>{count}</h1>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
+        </div>
     )
 }
 
