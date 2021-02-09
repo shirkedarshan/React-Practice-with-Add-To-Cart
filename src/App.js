@@ -1,14 +1,13 @@
-import React, {useState} from "react"
-import useCounter from "./useCounter"
+import React from "react"
+import Menu from "./Menu"
+import Favorite from "./Favorite"
 
 function App() {
-    const [number, add , subtract] = useCounter()
-    
     return (
         <div>
-            <h1>The count is {number}</h1>
-            <button onClick={add}>Add 1</button><br/>
-            <button onClick={subtract}>Subtract 1</button>
+            <Menu />
+            <hr />
+            <Favorite />
         </div>
     )
 }
