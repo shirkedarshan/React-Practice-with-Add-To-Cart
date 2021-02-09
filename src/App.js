@@ -1,5 +1,5 @@
-import React from "react"
 import "./App.css"
+import React from "react"
 
 import Header from "./Header"
 import Button from "./Button"
@@ -13,4 +13,4 @@ function App() {
     )
 }
 
-export default App  
+export default App
