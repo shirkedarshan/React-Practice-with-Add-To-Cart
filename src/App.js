@@ -7,19 +7,26 @@ import About from "./About"
 function App() {    
     return (
         <div>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            
-            <Switch>
-                {/* <Route exact path="/" render={() => <Home />} />
-                <Route path="/about" render={() => <About />} />
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/about">About</Link>
+            </nav>
 
+            {/* <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} /> */}
-
-                <Route exact path="/"><Home /></Route>
-                <Route path="/about"><About /></Route>
-
+                <Route path="/about" component={About} />
+            </Switch>
+             */}
+            <Switch>
+                <Route 
+                    exact 
+                    path="/" 
+                    render={
+                        ({match, location, history, staticContext}) => (
+                            <Home match={match} location={location} />
+                        )}
+                ></Route> 
+                <Route path="/about" component={About} />
             </Switch>
         </div>
     )
