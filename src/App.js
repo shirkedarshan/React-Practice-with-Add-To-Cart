@@ -19,16 +19,10 @@ function App() {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route exact path="/profile">
+                <Route path="/user">
                     <Profile />
                 </Route>
-                
-                <Route path="/profile/info">
-                    <Info/>
-                </Route>
-                <Route path="/profile/settings">
-                    <Settings/>
-                </Route>
+
                 <Route exact path="/services" >
                     <ServicesList />
                 </Route>
