@@ -1,38 +1,30 @@
-import React from "react"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import Home from "./pages/Home"
-import Profile from "./pages/profile/Profile"
-import Info from "./pages/profile/Info"
-import Settings from "./pages/profile/Settings"
-import ServicesList from "./pages/services/ServicesList"
-import ServiceDetail from "./pages/services/ServiceDetail"
+import React, {useState} from "react"
+import {Link, Switch, Route, Redirect} from "react-router-dom"
 
-import {Switch, Route} from "react-router-dom"
+// https://reacttraining.com/react-router/web/example/auth-workflow
 
-function App() {    
+function App() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
     return (
-            <div>
-            <Header />
-            {/* // goto serviceDetails */}
+        <div>
+            <Link to="/">Home</Link>
+            <Link to="/private">Private</Link>
             
             <Switch>
                 <Route exact path="/">
-                    <Home />
+                    <h1>Home page, anyone is allowed here</h1>
                 </Route>
-                <Route path="/user">
-                    <Profile />
+                <Route path="/private">
+                    {
+                        isLoggedIn ?
+                        <h1>Protected page, must be logged in to be here</h1> :
+                        <Redirect to="/login" />
+                    }
                 </Route>
-
-                <Route exact path="/services" >
-                    <ServicesList />
-                </Route>
-                <Route path="/services/:serviceId" >
-                    <ServiceDetail />
+                <Route path="/login">
+                    <button onClick={() => setIsLoggedIn(true)}>Log in</button>
                 </Route>
             </Switch>
-            
-            <Footer />
         </div>
     )
 }
