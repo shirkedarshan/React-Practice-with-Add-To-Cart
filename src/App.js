@@ -1,6 +1,5 @@
 import React from "react"
 import {Switch,Route} from "react-router-dom"
-
 import Header from "./components/Header"
 import Cart from "./pages/Cart"
 import Photos from "./pages/Photos"
@@ -9,11 +8,9 @@ import Photos from "./pages/Photos"
 function App() {
     return (
         <div>
-            <head>
-                <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" />
-                <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet" />
-                <link rel="stylesheet" href="styles.css"/>
-            </head>
+            <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" />
+            <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet" />
+            <link rel="stylesheet" href="styles.css"/>
 
             <Header/>
             <Switch>
