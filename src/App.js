@@ -1,10 +1,26 @@
-import React, {useState, useEffect, useRef} from "react"
+import React from "react"
+import {Switch,Route} from "react-router-dom"
+
+import Header from "./components/Header"
+import Cart from "./pages/Cart"
+import Photos from "./pages/Photos"
+
 
 function App() {
-    
     return (
         <div>
-            <h1>Welcome to React Capstone Project</h1>
+            <head>
+            <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet" />
+            </head>
+            <Header/>
+            <Switch>
+                <Route exact path="/">
+                    <Photos/>
+                </Route>
+                <Route exact path="/cart">
+                    <Cart/>
+                </Route>
+            </Switch>
         </div>
     )
 }
