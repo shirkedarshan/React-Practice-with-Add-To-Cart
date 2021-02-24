@@ -10,8 +10,11 @@ function App() {
     return (
         <div>
             <head>
-            <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" />
+                <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet" />
+                <link rel="stylesheet" href="styles.css"/>
             </head>
+
             <Header/>
             <Switch>
                 <Route exact path="/">
