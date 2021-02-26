@@ -2,6 +2,7 @@ import React, {useContext} from "react"
 import Image from "../components/Image"
 import {Context} from "../Context"
 import {getClass} from "../utils"
+import PropTypes from "prop-types"
 
 function Photos() {
     const {allPhotos} = useContext(Context)
@@ -17,6 +18,13 @@ function Photos() {
             {imageElements}
         </main>
     )
+}
+
+Image.propTypes = {
+    className: PropTypes.string,
+    img: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+    })
 }
 
 export default Photos
