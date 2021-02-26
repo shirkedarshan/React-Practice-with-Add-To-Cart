@@ -5,6 +5,7 @@ import {getClass} from "../utils"
 
 function Photos() {
     const {allPhotos} = useContext(Context)
+    
     console.log(allPhotos)
 
     const imageElements = allPhotos.map((img, i) => (
