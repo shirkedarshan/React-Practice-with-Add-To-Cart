@@ -2,7 +2,7 @@ import React, {useState,useEffect } from "react"
 
 const Context = React.createContext()
 
-function ContextProvider({children}){
+function ContextProvider(props){ // props or {children}
     const [allPhotos, setAllPhotos] = useState([])
 
     const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
@@ -14,11 +14,12 @@ function ContextProvider({children}){
     },[])
     
     console.log(allPhotos)
-    
+    // Write {children} insted props.children
+
     return(
         <Context.Provider value={{allPhotos}}>
-            {children}
-        </Context.Provider>
+            {props.children} 
+        </Context.Provider> 
     )
 }
 
