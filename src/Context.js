@@ -17,7 +17,11 @@ function ContextProvider(props){ // props or {children}
     function addToCart(newItem){
         setCartItems ( prevItems => [...prevItems,newItem])
     }
-    console.log(cartItems)
+    // console.log(cartItems)
+
+    function removeFromCart(id){
+        setCartItems( prevItems => prevItems.filter( item => item.id !== id))
+    }
 
     function toggleFavorite(id){
         const updatedArr = allPhotos.map( photo => {
@@ -36,7 +40,7 @@ function ContextProvider(props){ // props or {children}
     // Write {children} insted props.children
 
     return(
-        <Context.Provider value={{allPhotos,toggleFavorite,addToCart, cartItems}}>
+        <Context.Provider value={{allPhotos,toggleFavorite,addToCart, cartItems, removeFromCart}}>
             {props.children} 
         </Context.Provider> 
     )
