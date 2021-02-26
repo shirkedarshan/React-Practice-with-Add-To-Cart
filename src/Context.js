@@ -4,6 +4,7 @@ const Context = React.createContext()
 
 function ContextProvider(props){ // props or {children}
     const [allPhotos, setAllPhotos] = useState([])
+    const [cartItems, setCartItems] = useState([])
 
     const url = "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
 
@@ -12,6 +13,11 @@ function ContextProvider(props){ // props or {children}
         .then(res => res.json())
         .then(data => setAllPhotos(data))
     },[])
+    
+    function addToCart(newItem){
+        setCartItems ( prevItems => [...prevItems,newItem])
+    }
+    console.log(cartItems)
     
     function toggleFavorite(id){
         const updatedArr = allPhotos.map( photo => {
@@ -26,11 +32,11 @@ function ContextProvider(props){ // props or {children}
         })
         setAllPhotos(updatedArr)
     }
-    console.log(allPhotos)
+    // console.log(allPhotos)
     // Write {children} insted props.children
 
     return(
-        <Context.Provider value={{allPhotos,toggleFavorite}}>
+        <Context.Provider value={{allPhotos,toggleFavorite,addToCart}}>
             {props.children} 
         </Context.Provider> 
     )

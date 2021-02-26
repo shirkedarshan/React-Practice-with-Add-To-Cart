@@ -7,7 +7,7 @@ import PropTypes from "prop-types"
 function Photos() {
     const {allPhotos} = useContext(Context)
     
-    console.log(allPhotos)
+    // console.log(allPhotos)
 
     const imageElements = allPhotos.map((img , i) => (
         <Image key={img.id} img={img} className={getClass(i)} />
