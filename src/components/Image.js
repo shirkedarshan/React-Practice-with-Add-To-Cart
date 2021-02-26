@@ -1,8 +1,11 @@
-import React , {useState} from "react"
+import React , {useContext, useState} from "react"
+import {Context} from "../Context"
 
 function Image( {className , img} ){
     const [hovered,setHovered] = useState(false)
-    const heartIcon = hovered && <i className="ri-heart-line favorite"></i> 
+    const {toggleFavorite} = useContext(Context)
+
+    const heartIcon = hovered && <i className="ri-heart-line favorite" onClick={ ()=> toggleFavorite(img.id) } ></i> 
     const plusIcon =  hovered && <i className="ri-heart-line plus"></i> 
 
     console.log(hovered)
@@ -11,9 +14,9 @@ function Image( {className , img} ){
         <div className={`${className} image-container `} 
             onMouseEnter={()=> setHovered(true)}
             ouMouseLeave={()=> setHovered(false)}>  
-            {heartIcon}
+            
+            <img src={img.url} className="image-grid"/>{heartIcon}
             {plusIcon}
-            <img src={img.url} className="image-grid"/>
         </div>
     )
 }
