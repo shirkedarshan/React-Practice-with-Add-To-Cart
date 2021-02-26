@@ -6,6 +6,8 @@ function Image( {className , img} ){
     const [hovered,setHovered] = useState(false)
     const {toggleFavorite , addToCart, cartItems, removeFromCart } = useContext(Context)
 
+    console.log(cartItems)
+
     // const heartIcon = !img.isFavorite && <i className="ri-heart-line favorite" onClick={ ()=> toggleFavorite(img.id) } ></i> 
     function heartIcon() {
         if(img.isFavorite) {
