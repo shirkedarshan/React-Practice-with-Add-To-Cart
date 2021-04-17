@@ -1,4 +1,4 @@
-## Making of Add-To-Cart with React-JS
+# Making of Add-To-Cart with React-JS
 
 ## Getting Started with Create React App
 
